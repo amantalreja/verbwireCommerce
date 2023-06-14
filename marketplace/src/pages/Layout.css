@@ -13,7 +13,10 @@ nav div{
 }
 .red{
     color:grey;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
 }
 nav div :hover{
-    color:red;
+    color:white;
 }
