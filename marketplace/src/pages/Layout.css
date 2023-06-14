@@ -1,0 +1,8 @@
+nav {
+    display:flex;
+    flex-wrap: wrap;
+}
+nav div{
+    flex: 1 1 33%;
+    font-size:25px;
+}
