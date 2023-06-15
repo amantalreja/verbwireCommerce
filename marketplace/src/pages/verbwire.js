@@ -45,14 +45,13 @@ class verbwire {
 
   static async mintNFT(name, description, contractAddress,imageURL) {
     const form = new FormData();
-    form.append('allowPlatformToOperateToken', 'true');
-    form.append('filePath', imageURL);
     form.append('quantity', '1');
-    form.append('chain', 'ethereum');
-    form.append('name', name);
-    form.append('description', description);
-    form.append('contractAddress', contractAddress);
-
+    form.append('chain', 'goerli');
+    form.append('allowPlatformToOperateToken', 'true');
+    form.append('metadataUrl', imageURL);
+    form.append('contractAddress', 'we');
+    form.append('recipientAddress', '0x33145a6258e89b6E0796d237A3048A3852cCaeQ7');
+    
     const options = {
       method: 'POST',
       headers: {
@@ -60,9 +59,10 @@ class verbwire {
         'X-API-Key': 'sk_live_e3ea9118-701a-4c48-8c74-b930d0d30d9e'
       }
     };
+    
     options.body = form;
-
-    fetch('https://api.verbwire.com/v1/nft/mint/mintFromFile', options)
+    
+    fetch('https://api.verbwire.com/v1/nft/mint/mintFromMetadataUrl', options)
       .then(response => response.json())
       .then(response => console.log(response))
       .catch(err => console.error(err));
