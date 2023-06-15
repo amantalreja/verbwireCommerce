@@ -26,9 +26,11 @@ class App extends Component {
       ],
       connectText: 'Connect to MetaMask',
       image: null,
-      imageDiv:'',
+      imageDiv: '',
       walletAddress: '',
-      button:'',
+      button: '',
+      deployResponse: 'HERE IS DEPLOy',
+      allTransactions : 'none'
     };
     // if we are using arrow function binding is not required
     //  this.onImageChange = this.onImageChange.bind(this);
@@ -60,15 +62,26 @@ class App extends Component {
       });
     const account = accounts[0];
     console.log(account);
-    this.setState({ walletAddress: account, connectText: 'MetaMask Connected',imageDiv:<input type="file" accept="image/png, image/jpeg" name="myImage" onChange={this.onImageChange} /> });
+    
+    this.setState({ walletAddress: account, connectText: 'MetaMask Connected', imageDiv: <input type="file" accept="image/png, image/jpeg" name="myImage" onChange={this.onImageChange} />,allTransactions:verbwire.Alltransactions(this.state.walletAddress) });
+    console.log(this.state.allTransactions);
     return true
   }
-  deployButton= ()=>{
-   return(
-    <button onClick={()=>verbwire.deploy(this.state.walletAddress)}>
-      Deploy
-    </button>
-   )
+   deployButton = () => {
+    return (
+      <button onClick={() => {
+        const received= verbwire.deploy(this.state.walletAddress).then((response)=>{
+          console.log("going mint")
+          console.log(response)
+          verbwire.mintNFT("first","nft that could serve a good","0x663E38C9D051dB4a54036380E7BA319E8bC989D2",)
+          this.setState({deployResponse:response});
+          console.log("deploy response changed")
+        });
+        
+      }}>
+        Deploy
+      </button>
+    )
 
   }
   render() {
@@ -83,8 +96,13 @@ class App extends Component {
               </div>
               <div className="flexAgainChild">
                 <h1>Upload NFT</h1>
-                {this.state.imageDiv.length<1?'Connect First to Upload':this.state.imageDiv}
+                {this.state.imageDiv.length < 1 ? 'Connect First to Upload' : this.state.imageDiv}
                 {this.state.button}
+                {this.state.deployResponse}
+                <div>
+                 { console.log()}
+                 
+                </div>
               </div>
               <div className="flexAgainChild">
                 <img style={{ width: 400 }} src={this.state.image} />
