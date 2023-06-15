@@ -1,0 +1,23 @@
+.justifyContent{
+    text-align: center;
+}
+.justifyContent input::file-selector-button,button{
+    border-radius:10px;
+    padding: 16px;
+    background-color:rgb(29, 24, 24);
+    color: darkgrey;
+    opacity:0.9;
+    font-size:20px;
+}
+.justifyContent input::file-selector-button:hover,button:hover{
+    opacity:1;
+}
+.flexAgain{
+    display: flex;
+    flex-wrap: wrap;
+}
+.flexAgainChild{
+    flex:1 1 30%;
+    margin:1%;
+}
+

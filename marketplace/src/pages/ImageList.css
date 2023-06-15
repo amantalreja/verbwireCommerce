@@ -1,0 +1,11 @@
+.flexParent{
+    display:flex;
+    flex-wrap:wrap;
+    width:100%;
+}
+.flexChild{
+    flex: 1 1 33%;
+}
+img{
+    width:100%;
+}
