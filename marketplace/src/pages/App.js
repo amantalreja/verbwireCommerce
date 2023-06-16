@@ -3,6 +3,7 @@ import ImageGallery from './ImageList';
 import MetaMaskSDK from '@metamask/sdk';
 import verbwire from "./verbwire";
 import './App.css';
+import Firebase from'./Firebase';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -112,6 +113,7 @@ class App extends Component {
             "yes"{ }{window.ethereum.isConnected() ? "yes" : "no"}
           </div>
         </div>
+        <Firebase></Firebase>
       </div>
     );
   }
