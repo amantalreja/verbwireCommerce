@@ -43,14 +43,16 @@ class verbwire {
       .catch(err => console.error(err));
   }
 
-  static async mintNFT(name, description, contractAddress,imageURL) {
+  static async mintNFT(name, description, contractAddress,walletAddress,imageURL) {
     const form = new FormData();
     form.append('quantity', '1');
     form.append('chain', 'goerli');
     form.append('allowPlatformToOperateToken', 'true');
     form.append('metadataUrl', imageURL);
-    form.append('contractAddress', 'we');
-    form.append('recipientAddress', '0x33145a6258e89b6E0796d237A3048A3852cCaeQ7');
+    form.append('name', name);
+    form.append('description', description);
+    form.append('contractAddress', contractAddress);
+    form.append('recipientAddress', walletAddress);
     
     const options = {
       method: 'POST',

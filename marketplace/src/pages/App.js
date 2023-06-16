@@ -73,11 +73,10 @@ class App extends Component {
         const received= verbwire.deploy(this.state.walletAddress).then((response)=>{
           console.log("going mint")
           console.log(response)
-          verbwire.mintNFT("first","nft that could serve a good","0x663E38C9D051dB4a54036380E7BA319E8bC989D2",this.state.image)
+          verbwire.mintNFT("first","nft that could serve a good","0x663E38C9D051dB4a54036380E7BA319E8bC989D2",this.state.walletAddress,this.state.image)
           this.setState({deployResponse:response});
           console.log("deploy response changed")
         });
-        
       }}>
         Deploy
       </button>
