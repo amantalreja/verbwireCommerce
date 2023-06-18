@@ -1,17 +1,21 @@
 import './Blogs.css'
+import { useNavigate } from "react-router-dom";
 const Blogs = () => {
     return (
       <main>
-      <section id="mission">
-        <h2>Our Mission</h2>
-        <p>EmpowerArt is dedicated to providing equal opportunities for growth and empowerment to non-profit organizations, orphanages, and disabled artists. We believe that every individual, regardless of their circumstances, deserves a chance to showcase their artistic talent to the world. Our mission is to break down barriers and create a platform where marginalized artists can express themselves, share their stories, and gain recognition for their exceptional creativity. By providing a space for non-profit organizations, orphanages, and disabled artists to exhibit their artwork as NFTs, we aim to amplify their voices and contribute to their personal and artistic growth.</p>
-        <p>At EmpowerArt, we believe that the originality found in the art created by individuals facing challenges is a testament to their strength and resilience. By fostering an inclusive community, we seek to inspire and uplift these artists, empowering them to embrace their unique perspectives and abilities.</p>
-        <p>Through our platform, we strive to create meaningful connections between artists, art enthusiasts, and supporters of non-profit organizations. By purchasing NFTs from EmpowerArt, individuals not only acquire exceptional artwork but also make a direct impact on the lives of the artists and the causes they represent. Join us on this transformative journey as we celebrate the remarkable artistic talent of marginalized individuals, proving that art transcends boundaries and has the power to create positive change.</p>
-      </section>
-      <section id="team">
-        <h2>Our Team</h2>
-        
-      </section>
+      <section id="join">
+      <h2>Be a Part of Us</h2>
+      <p>EmpowerArt welcomes non-profit organizations, orphanages, disabled artists, and art enthusiasts to join us in our mission of creating an inclusive platform for artistic expression and empowerment.</p>
+      <p>Organizations and individuals can become a part of EmpowerArt in several ways:</p>
+      
+        <p>Upload NFTs: Non-profit organizations, orphanages, and disabled artists can showcase their artwork by uploading NFTs to our platform. This allows them to gain visibility, connect with art enthusiasts, and contribute to their causes.</p>
+        <p>Contribute to Causes: Art enthusiasts and supporters can directly contribute to the causes represented by the artists. By purchasing NFTs, individuals not only acquire unique artwork but also make a positive impact on the lives of the artists and support the organizations they represent.</p>
+        <p>Collaborate and Connect: EmpowerArt fosters collaboration and connection among artists, organizations, and individuals. By joining our community, you can engage with like-minded individuals, share insights, and inspire each other.</p>
+      
+      <p>Together, let's celebrate the diversity of artistic expression and empower marginalized individuals to shine on the global stage.</p>
+    </section>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSd2KquZWwNq1dIwF3XQNA513F3LenhBfoymqIugpfnteJEHsw/viewform?usp=sf_link"> <button onClick={()=>{
+        }}> Link to Google Form</button></a>
     </main>);
   };
 

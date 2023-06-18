@@ -104,7 +104,7 @@ class App extends Component {
     return (
       <div>
         <div className="h1"><h1>
-          Save Art to Save people
+          Let's Celebrate The Differences
         </h1></div>
 
         <div>
