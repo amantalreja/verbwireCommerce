@@ -56,6 +56,7 @@ class App extends Component {
     }
   };
   checker = async () => {
+    try{
     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
       .catch((err) => {
         if (err.code === 4001) {
@@ -66,12 +67,17 @@ class App extends Component {
           console.error(err);
         }
       });
+      
     const account = accounts[0];
     console.log(account);
 
     this.setState({ walletAddress: account, connectText: 'MetaMask Connected', imageDiv: <input type="file" accept="image/png, image/jpeg" name="myImage" onChange={this.onImageChange} />, allTransactions: verbwire.Alltransactions(this.state.walletAddress) });
     console.log(this.state.allTransactions);
-    return true
+    return true}
+    catch(e){
+      alert("Please install metamask first"
+      )
+    }
   }
   deployButton = () => {
     return (

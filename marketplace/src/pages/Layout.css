@@ -1,22 +1,35 @@
 body{
-    margin:5px;
+    
     padding:0;
     background-color:#121222;
     color:white  !important;
+}
+.divParent{
+    display:flex;
+    flex-wrap:wrap;
+    width:100%;
+}
+nav,.divChild{
+    position:left;
+}
+.divChild img {
+    width:100px;
+    margin-top:10px;
 }
 nav {
     display:flex;
     flex-wrap: wrap;    
     background-color:rgb(40, 31, 84) !important;
     border-radius:20px;
-    width:96%;
+    width:80%;
     margin:1%;
     padding:15px;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 
 }
+img{margin-left:20px;}
 nav div{
-    flex: 1 1 33%;
+    flex: 1 1 20%;
     font-size:25px;
     text-align:center;
 }

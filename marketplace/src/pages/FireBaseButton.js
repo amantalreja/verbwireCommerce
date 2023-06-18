@@ -41,7 +41,7 @@ function FirebaseButton() {
         {imageUrls.map((url) => {
           return (
             <div className="flexChild">
-              <img src={url} />
+              <img src={url} className="nftimages" />
             </div>);
         })}
       </div>

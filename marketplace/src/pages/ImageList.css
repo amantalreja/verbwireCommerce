@@ -5,8 +5,11 @@
 }
 .flexChild{
     margin:1%;
-    flex: 1 1 29%;
+    flex: 1 1 27%;
 }
 img{
     width:100%;
+}
+.nftimages{
+    object-fit: cover;
 }
