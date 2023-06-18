@@ -4,6 +4,7 @@ const Layout = () => {
   return (
     <>
       <nav>
+        <img style={{width:100}} src="something.png"/>
         <div> <Link to="/"  style={{textDecoration:'none'}} className="red">Home</Link></div>
         <div> <Link to="/blogs" style={{textDecoration:'none'}} className="red">Blogs</Link></div>
         <div> <Link to="/contact" style={{textDecoration:'none'}} className="red" >Contact</Link></div>
