@@ -4,8 +4,10 @@
 .body{
     text-align: center;
 }
-h1{
-    margin-left:
+.h1{
+    text-align: center;
+    margin-bottom:20px;
+    width:100%;
 }
 .justifyContent input::file-selector-button,button{
     border-radius:10px;

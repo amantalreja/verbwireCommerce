@@ -32,8 +32,8 @@ class App extends Component {
       walletAddress: '',
       button: '',
       deployResponse: '',
-      allTransactions : 'none',
-      fbase:'',
+      allTransactions: 'none',
+      fbase: '',
     };
     // if we are using arrow function binding is not required
     //  this.onImageChange = this.onImageChange.bind(this);
@@ -49,8 +49,10 @@ class App extends Component {
         button: this.deployButton()
       });
       console.log("image chosen");
-      this.setState({fbase:
-        <div><Firebase></Firebase></div>});
+      this.setState({
+        fbase:
+          <div><Firebase></Firebase></div>
+      });
     }
   };
   checker = async () => {
@@ -66,24 +68,26 @@ class App extends Component {
       });
     const account = accounts[0];
     console.log(account);
-    
-    this.setState({ walletAddress: account, connectText: 'MetaMask Connected', imageDiv: <input type="file" accept="image/png, image/jpeg" name="myImage" onChange={this.onImageChange} />,allTransactions:verbwire.Alltransactions(this.state.walletAddress) });
+
+    this.setState({ walletAddress: account, connectText: 'MetaMask Connected', imageDiv: <input type="file" accept="image/png, image/jpeg" name="myImage" onChange={this.onImageChange} />, allTransactions: verbwire.Alltransactions(this.state.walletAddress) });
     console.log(this.state.allTransactions);
     return true
   }
-   deployButton = () => {
+  deployButton = () => {
     return (
       <button onClick={() => {
-        verbwire.mintNFT("first","nft that could serve a good","0x868f92347EDfC4dCBDD9198Ec8Ec4d1821961edb",this.state.walletAddress,this.state.image).then((response)=>{
+        verbwire.mintNFT("first", "nft that could serve a good", "0x868f92347EDfC4dCBDD9198Ec8Ec4d1821961edb", this.state.walletAddress, this.state.image).then((response) => {
           console.log("logging this")
           console.log(response);
-          this.setState({deployResponse:<div>
-            {Object.entries(response.transaction_details).map(([key, value]) => (
-              <h3 key={key}>
-                {key}: {value}
-              </h3>
-            ))}
-          </div>});
+          this.setState({
+            deployResponse: <div>
+              {Object.entries(response.transaction_details).map(([key, value]) => (
+                <h3 key={key}>
+                  {key}: {value}
+                </h3>
+              ))}
+            </div>
+          });
         });
       }}>
         Deploy NFT
@@ -93,9 +97,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1 style={{marginLeft:50}}>
+        <div className="h1"><h1>
           Save Art to Save people
-        </h1>
+        </h1></div>
+
         <div>
           <div>
             <div className="justifyContent flexAgain">
@@ -104,14 +109,14 @@ class App extends Component {
                 <button onClick={this.checker}>{this.state.connectText}</button>
               </div>
               <div className="flexAgainChild">
-                <h1 style={{marginBottom:10}}>Upload NFT</h1>
+                <h1 style={{ marginBottom: 10 }}>Upload NFT</h1>
                 {this.state.imageDiv.length < 1 ? 'Connect First to Upload' : this.state.imageDiv}
                 {this.state.button}
                 {this.state.deployResponse}
                 {this.state.fbase}
                 <div>
-                 { console.log()}
-                 
+                  {console.log()}
+
                 </div>
               </div>
               <div className="flexAgainChild">
@@ -120,7 +125,7 @@ class App extends Component {
             </div>
           </div>
         </div>
-       <FirebaseButton></FirebaseButton>
+        <FirebaseButton></FirebaseButton>
       </div>
     );
   }
