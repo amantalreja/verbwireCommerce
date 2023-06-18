@@ -12,21 +12,21 @@ const Contact = () => {
         <div class="team-member">
           <img src="https://github.com/amantalreja/verbwireCommerce/blob/main/marketplace/src/pages/lgoo.png?raw=true" alt="Team Member 1"/>
           <div>
-            <h3>John Doe</h3>
-            <p>Co-founder & CEO</p>
+            <h3>Aman Talreja</h3>
+            <p>Full Stack Developer</p>
           </div>
         </div>
         <div class="team-member">
           <img src="https://github.com/amantalreja/verbwireCommerce/blob/main/marketplace/src/pages/lgoo.png?raw=true" alt="Team Member 2"/>
           <div>
-            <h3>Jane Smith</h3>
-            <p>Co-founder & CTO</p>
+            <h3>Tanay Shah</h3>
+            <p>Back-End Engineer</p>
           </div>
         </div>
         <div class="team-member">
           <img src="https://github.com/amantalreja/verbwireCommerce/blob/main/marketplace/src/pages/lgoo.png?raw=true" alt="Team Member 3"/>
           <div>
-            <h3>Alex Johnson</h3>
+            <h3>Agastya Agarwal</h3>
             <p>Lead Designer</p>
           </div>
         </div>
