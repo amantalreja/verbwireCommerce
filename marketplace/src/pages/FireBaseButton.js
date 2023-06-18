@@ -10,12 +10,10 @@ import {
 import { storage } from "./firebase-config";
 import { v4 } from "uuid";
 import './ImageList.css';
-import verbwire from "./verbwire";
 
-function Firebase() {
+function FirebaseButton() {
   const [imageUpload, setImageUpload] = useState(null);
   const [imageUrls, setImageUrls] = useState([]);
-  const [imageCondition,setImageCondition]= useState("");
 
   const imagesListRef = ref(storage, "images/");
   const uploadFile = () => {
@@ -24,10 +22,8 @@ function Firebase() {
     uploadBytes(imageRef, imageUpload).then((snapshot) => {
       getDownloadURL(snapshot.ref).then((url) => {
         setImageUrls((prev) => [...prev, url]);
-        setImageCondition("NFT verified successfully");
       });
     });
-    
   };
 
   useEffect(() => {
@@ -41,18 +37,16 @@ function Firebase() {
   }, []);
 
   return (
-    <div className="App">
-      <input
-        type="file"
-        onChange={(event) => {
-          setImageUpload(event.target.files[0]);
-          console.log("NFT uploaded successfuly");
-        }}
-      />
-      <button onClick={uploadFile}> Verify NFT</button>
-      {imageCondition}
+    <div className="App"> <div className="flexParent">
+        {imageUrls.map((url) => {
+          return (
+            <div className="flexChild">
+              <img src={url} />
+            </div>);
+        })}
+      </div>
     </div>
   );
 }
 
-export default Firebase;
+export default FirebaseButton;

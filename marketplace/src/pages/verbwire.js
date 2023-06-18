@@ -9,15 +9,13 @@ class verbwire {
     form.append('isCollectionContract', 'false');
     form.append('recipientAddress', wallet);
     form.append('contractName', 'Edu');
-
     const options = {
       method: 'POST',
       headers: {
         accept: 'application/json',
-        'X-API-Key': 'sk_live_e3ea9118-701a-4c48-8c74-b930d0d30d9e'
+        'X-API-Key': 'sk_live_271f9963-2031-4e3a-b0e7-483f1fdf7b11'
       }
     };
-
     options.body = form;
     var result = 'empty';
     await fetch('https://api.verbwire.com/v1/nft/deploy/deployContract', options)
@@ -33,7 +31,7 @@ class verbwire {
       method: 'GET',
       headers: {
         accept: 'application/json',
-        'X-API-Key': 'sk_live_e3ea9118-701a-4c48-8c74-b930d0d30d9e'
+        'X-API-Key': 'sk_live_271f9963-2031-4e3a-b0e7-483f1fdf7b11'
       }
     };
 
@@ -49,8 +47,6 @@ class verbwire {
     form.append('chain', 'goerli');
     form.append('allowPlatformToOperateToken', 'true');
     form.append('metadataUrl', imageURL);
-    form.append('name', name);
-    form.append('description', description);
     form.append('contractAddress', contractAddress);
     form.append('recipientAddress', walletAddress);
     
@@ -58,18 +54,16 @@ class verbwire {
       method: 'POST',
       headers: {
         accept: 'application/json',
-        'X-API-Key': 'sk_live_e3ea9118-701a-4c48-8c74-b930d0d30d9e'
+        'X-API-Key': 'sk_live_271f9963-2031-4e3a-b0e7-483f1fdf7b11'
       }
     };
-    
     options.body = form;
-    
-    fetch('https://api.verbwire.com/v1/nft/mint/mintFromMetadataUrl', options)
+  var result= "";
+  await fetch('https://api.verbwire.com/v1/nft/mint/mintFromMetadataUrl', options)
       .then(response => response.json())
-      .then(response => console.log(response))
+      .then(response => { result = response; console.log(response) })
       .catch(err => console.error(err));
+  return result;
   }
-
-
 }
 export default verbwire

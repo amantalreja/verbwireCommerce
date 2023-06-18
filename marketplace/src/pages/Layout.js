@@ -4,8 +4,8 @@ const Layout = () => {
   return (
     <>
       <nav>
-        <div> <Link to="/" className="red">Home</Link></div>
-        <div> <Link to="/blogs" className="red">Blogs</Link></div>
+        <div> <Link to="/"  style={{textDecoration:'none'}} className="red">Home</Link></div>
+        <div> <Link to="/blogs" style={{textDecoration:'none'}} className="red">Blogs</Link></div>
         <div> <Link to="/contact" style={{textDecoration:'none'}} className="red" >Contact</Link></div>
 
       </nav>
